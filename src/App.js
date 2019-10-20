@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { withAuthenticator } from 'aws-amplify-react'; // or 'aws-amplify-react-native';
+import Amplify from 'aws-amplify';
+// Get the aws resources configuration parameters
+import awsconfig from './aws-exports'; // if you are using Amplify CLI
+
+Amplify.configure(awsconfig);
 function App() {
   return (
     <div className="App">
@@ -23,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
