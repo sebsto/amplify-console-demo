@@ -29,4 +29,17 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  
+                // Render a sign out button once logged in
+                includeGreetings: true, 
+  
+                // Show only certain components
+                authenticatorComponents: [],
+  
+                // display federation/social provider buttons 
+                federated: null,
+                
+                // customize the UI/styling
+                theme: { button: { backgroundColor: "green" } }
+});
